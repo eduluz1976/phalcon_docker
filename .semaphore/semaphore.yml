@@ -19,7 +19,7 @@ blocks:
       epilogue:
         on_pass:
           commands:
-            - commit -m "..."
+            - '# commit -m "..."'
             - push
   - name: Unit tests
     task:
