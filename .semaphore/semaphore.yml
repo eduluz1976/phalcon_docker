@@ -11,10 +11,12 @@ blocks:
         - name: docker build
           commands:
             - checkout
-            - 'docker build -t eduluz1976/phalcon_xdebug:dev .'
+            - cat README.md
+            - '# docker build -t eduluz1976/phalcon_xdebug:dev .'
   - name: Unit tests
     task:
       jobs:
         - name: 'Job #1'
           commands:
-            - 'docker run eduluz1976/phalcon_xdebug:dev php vendor/bin/phpunit'
+            - '# docker run eduluz1976/phalcon_xdebug:dev php vendor/bin/phpunit'
+            - echo "Ok..."
