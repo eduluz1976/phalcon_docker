@@ -1,0 +1,20 @@
+version: v1.0
+name: Docker
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Build Image
+    task:
+      jobs:
+        - name: docker build
+          commands:
+            - checkout
+            - 'docker build -t eduluz1976/phalcon_xdebug:dev .'
+  - name: Unit tests
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - 'docker run eduluz1976/phalcon_xdebug:dev php vendor/bin/phpunit'
