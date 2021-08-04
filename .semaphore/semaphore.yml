@@ -15,6 +15,12 @@ blocks:
             - '# docker build -t eduluz1976/phalcon_xdebug:dev .'
             - composer require phpunit/phpunit
             - mkdir tests
+            - vendor/bin/phpunit
+      epilogue:
+        on_pass:
+          commands:
+            - commit -m "..."
+            - push
   - name: Unit tests
     task:
       jobs:
@@ -22,4 +28,3 @@ blocks:
           commands:
             - '# docker run eduluz1976/phalcon_xdebug:dev php vendor/bin/phpunit'
             - echo "Ok..."
-            - vendor/bin/phpunit
