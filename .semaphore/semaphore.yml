@@ -15,7 +15,7 @@ blocks:
             - '# docker build -t eduluz1976/phalcon_xdebug:dev .'
             - composer require phpunit/phpunit
             - mkdir tests
-            - vendor/bin/phpunit
+            - vendor/bin/phpunit tests
       epilogue:
         on_pass:
           commands:
